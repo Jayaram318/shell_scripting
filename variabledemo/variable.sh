@@ -14,3 +14,8 @@ echo "This is $Name,from $state_name"
 # using arthemetic expressions in script
 number=4
 echo $number+2
+
+# if we use arthemetic expressions shell read as text so we can use below expression
+
+echo "expression of above"
+echo $((${number}+1))
