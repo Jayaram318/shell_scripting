@@ -11,5 +11,6 @@ Name=K.Jayaramreddy
 state_name=Andhra_pradesh
 
 echo "This is $Name,from $state_name"
+# using arthemetic expressions in script
 number=4
 echo $number+2
