@@ -12,6 +12,12 @@ full_home_dir=$?
 
 #return code short hand command
 
+short_hand=$?
+
+echo "return code for full command used test -d output is ${full_home_dir}"
+
+echo "return code for short command used [] output is ${short_hand}"
+
 
 output:
 
@@ -32,8 +38,3 @@ return code for full command used test -d output is 0
 return code for short command used [] output is 0
 ubuntu@ip-172-31-29-182:/$
 
-short_hand=$?
-
-echo "return code for full command used test -d output is ${full_home_dir}"
-
-echo "return code for short command used [] output is ${short_hand}"
