@@ -1,0 +1,26 @@
+ubuntu@ip-172-31-29-182:/$ [[ -f /script/test/app.py ]]
+ubuntu@ip-172-31-29-182:/$ echo $?
+0
+ubuntu@ip-172-31-29-182:/$
+ubuntu@ip-172-31-29-182:/$ test 5 -gt 2 && echo "yes" || echo "no"
+yes
+ubuntu@ip-172-31-29-182:/$ test 5 -lt 2 && echo "yes" || echo "no"
+no
+ubuntu@ip-172-31-29-182:/$ test 5 -nq 2 && echo "yes" || echo "no"
+-bash: test: -nq: binary operator expected
+no
+ubuntu@ip-172-31-29-182:/$ test 5 -ne 2 && echo "yes" || echo "no"
+yes
+ubuntu@ip-172-31-29-182:/$ test 5 -eq 2 && echo "yes" || echo "no"
+no
+ubuntu@ip-172-31-29-182:/$ [ 5 -gt 2 ]
+ubuntu@ip-172-31-29-182:/$ echo $?
+0
+ubuntu@ip-172-31-29-182:/$ [ 5 -gt 22 ]
+ubuntu@ip-172-31-29-182:/$ echo $?
+1
+ubuntu@ip-172-31-29-182:/$ [ 5 -gt 22 ] && echo "0" || echo "1"
+1
+ubuntu@ip-172-31-29-182:/$ [ 5 -ne 22 ] && echo "0" || echo "1"
+0
+ubuntu@ip-172-31-29-182:/$
