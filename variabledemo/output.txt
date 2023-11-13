@@ -1,0 +1,172 @@
+ubuntu@ip-172-31-29-182:/script$ ./return.sh
+/tmp/tmp.5Zg75OBIiY
+mkdir: cannot create directory ‘/home/ubuntu’: File exists
+./return.sh: line 15: echoprint the success output of mktemp_ec=0: command not found
+./return.sh: line 18: echoprint the failure output of mktemp_ec=1: command not found
+ubuntu@ip-172-31-29-182:/script$ bash -x ./return.sh
++ mktemp
+/tmp/tmp.Kjna5mCXF7
++ mktemp_ec=0
++ mkdir /home/ubuntu
+mkdir: cannot create directory ‘/home/ubuntu’: File exists
++ mkdir_ec=1
++ 'echoprint the success output of mktemp_ec=0'
+./return.sh: line 15: echoprint the success output of mktemp_ec=0: command not found
++ 'echoprint the failure output of mktemp_ec=1'
+./return.sh: line 18: echoprint the failure output of mktemp_ec=1: command not found
+ubuntu@ip-172-31-29-182:/script$ vi return.sh
+ubuntu@ip-172-31-29-182:/script$ sudo vi return.sh
+ubuntu@ip-172-31-29-182:/script$ bash -x ./return.sh
++ mktemp
+/tmp/tmp.fTJ0nk2R4B
++ mktemp_ec=0
++ mkdir /home/ubuntuu
+mkdir: cannot create directory ‘/home/ubuntuu’: Permission denied
++ mkdir_ec=1
++ 'echoprint the success output of mktemp_ec=0'
+./return.sh: line 15: echoprint the success output of mktemp_ec=0: command not found
++ 'echoprint the failure output of mktemp_ec=1'
+./return.sh: line 18: echoprint the failure output of mktemp_ec=1: command not found
+ubuntu@ip-172-31-29-182:/script$ sudo vi return.sh
+ubuntu@ip-172-31-29-182:/script$ bash -x ./return.sh
++ mktemp
+/tmp/tmp.fm1J55hTDk
++ mktemp_ec=0
++ mkdir /home/jayaram
+mkdir: cannot create directory ‘/home/jayaram’: Permission denied
++ mkdir_ec=1
++ 'echoprint the success output of mktemp_ec=0'
+./return.sh: line 15: echoprint the success output of mktemp_ec=0: command not found
++ 'echoprint the failure output of mktemp_ec=1'
+./return.sh: line 18: echoprint the failure output of mktemp_ec=1: command not found
+ubuntu@ip-172-31-29-182:/script$ sudo vi return.sh
+ubuntu@ip-172-31-29-182:/script$ bash -x ./return.sh
++ mktemp
+/tmp/tmp.TC15A2iqI6
++ mktemp_ec=0
++ sudo mkdir /home/jayaram
++ mkdir_ec=0
++ 'echoprint the success output of mktemp_ec=0'
+./return.sh: line 15: echoprint the success output of mktemp_ec=0: command not found
++ 'echoprint the failure output of mktemp_ec=0'
+./return.sh: line 18: echoprint the failure output of mktemp_ec=0: command not found
+ubuntu@ip-172-31-29-182:/script$ cd ..
+ubuntu@ip-172-31-29-182:/$ ls
+bin   dev  home  lib32  libx32      media  opt   root  sbin    snap  sys  usr
+boot  etc  lib   lib64  lost+found  mnt    proc  run   script  srv   tmp  var
+ubuntu@ip-172-31-29-182:/$ test -d /home/ubuntu/
+ubuntu@ip-172-31-29-182:/$ echo $?
+0
+ubuntu@ip-172-31-29-182:/$ ls script/
+return.sh
+ubuntu@ip-172-31-29-182:/$ pwd
+/
+ubuntu@ip-172-31-29-182:/$ cd s
+sbin/   script/ snap/   srv/    sys/
+ubuntu@ip-172-31-29-182:/$ cd script/
+ubuntu@ip-172-31-29-182:/script$ pwd
+/script
+ubuntu@ip-172-31-29-182:/script$ cd .
+ubuntu@ip-172-31-29-182:/script$ cd ..
+ubuntu@ip-172-31-29-182:/$ ~
+-bash: /home/ubuntu: Is a directory
+ubuntu@ip-172-31-29-182:/$ pwd
+/
+ubuntu@ip-172-31-29-182:/$ cd ~
+ubuntu@ip-172-31-29-182:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-29-182:~$ test -d /home/ubuntu/script
+ubuntu@ip-172-31-29-182:~$ echo $?
+1
+ubuntu@ip-172-31-29-182:~$ ll
+total 32
+drwxr-x--- 4 ubuntu ubuntu 4096 Nov 13 04:14 ./
+drwxr-xr-x 4 root   root   4096 Nov 13 04:16 ../
+-rw-r--r-- 1 ubuntu ubuntu  220 Jan  6  2022 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu 3771 Jan  6  2022 .bashrc
+drwx------ 2 ubuntu ubuntu 4096 Nov 13 03:52 .cache/
+-rw-r--r-- 1 ubuntu ubuntu  807 Jan  6  2022 .profile
+drwx------ 2 ubuntu ubuntu 4096 Nov 13 03:52 .ssh/
+-rw-r--r-- 1 ubuntu ubuntu    0 Nov 13 03:52 .sudo_as_admin_successful
+-rw------- 1 ubuntu ubuntu 1378 Nov 13 04:14 .viminfo
+ubuntu@ip-172-31-29-182:~$ cd /home/ubuntu/
+ubuntu@ip-172-31-29-182:~$ ll
+total 32
+drwxr-x--- 4 ubuntu ubuntu 4096 Nov 13 04:14 ./
+drwxr-xr-x 4 root   root   4096 Nov 13 04:16 ../
+-rw-r--r-- 1 ubuntu ubuntu  220 Jan  6  2022 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu 3771 Jan  6  2022 .bashrc
+drwx------ 2 ubuntu ubuntu 4096 Nov 13 03:52 .cache/
+-rw-r--r-- 1 ubuntu ubuntu  807 Jan  6  2022 .profile
+drwx------ 2 ubuntu ubuntu 4096 Nov 13 03:52 .ssh/
+-rw-r--r-- 1 ubuntu ubuntu    0 Nov 13 03:52 .sudo_as_admin_successful
+-rw------- 1 ubuntu ubuntu 1378 Nov 13 04:14 .viminfo
+ubuntu@ip-172-31-29-182:~$ cd ..
+ubuntu@ip-172-31-29-182:/home$ cd ..
+ubuntu@ip-172-31-29-182:/$ ll
+total 76
+drwxr-xr-x  20 root root  4096 Nov 13 04:09 ./
+drwxr-xr-x  20 root root  4096 Nov 13 04:09 ../
+lrwxrwxrwx   1 root root     7 Sep 19 02:19 bin -> usr/bin/
+drwxr-xr-x   4 root root  4096 Sep 19 02:24 boot/
+drwxr-xr-x  15 root root  3200 Nov 13 03:52 dev/
+drwxr-xr-x  93 root root  4096 Nov 13 03:52 etc/
+drwxr-xr-x   4 root root  4096 Nov 13 04:16 home/
+lrwxrwxrwx   1 root root     7 Sep 19 02:19 lib -> usr/lib/
+lrwxrwxrwx   1 root root     9 Sep 19 02:19 lib32 -> usr/lib32/
+lrwxrwxrwx   1 root root     9 Sep 19 02:19 lib64 -> usr/lib64/
+lrwxrwxrwx   1 root root    10 Sep 19 02:19 libx32 -> usr/libx32/
+drwx------   2 root root 16384 Sep 19 02:22 lost+found/
+drwxr-xr-x   2 root root  4096 Sep 19 02:19 media/
+drwxr-xr-x   2 root root  4096 Sep 19 02:19 mnt/
+drwxr-xr-x   2 root root  4096 Sep 19 02:19 opt/
+dr-xr-xr-x 156 root root     0 Nov 13 03:50 proc/
+drwx------   4 root root  4096 Nov 13 04:16 root/
+drwxr-xr-x  26 root root   880 Nov 13 03:52 run/
+lrwxrwxrwx   1 root root     8 Sep 19 02:19 sbin -> usr/sbin/
+drwxr-xr-x   2 root root  4096 Nov 13 04:16 script/
+drwxr-xr-x   8 root root  4096 Sep 19 02:26 snap/
+drwxr-xr-x   2 root root  4096 Sep 19 02:19 srv/
+dr-xr-xr-x  13 root root     0 Nov 13 03:50 sys/
+drwxrwxrwt  11 root root  4096 Nov 13 04:16 tmp/
+drwxr-xr-x  14 root root  4096 Sep 19 02:19 usr/
+drwxr-xr-x  13 root root  4096 Sep 19 02:21 var/
+ubuntu@ip-172-31-29-182:/$ cd script/
+ubuntu@ip-172-31-29-182:/script$ mkdir /script1
+mkdir: cannot create directory ‘/script1’: Permission denied
+ubuntu@ip-172-31-29-182:/script$ sudo mkdir /script1
+ubuntu@ip-172-31-29-182:/script$ cd script1
+-bash: cd: script1: No such file or directory
+ubuntu@ip-172-31-29-182:/script$ ll
+total 12
+drwxr-xr-x  2 root root 4096 Nov 13 04:16 ./
+drwxr-xr-x 21 root root 4096 Nov 13 04:36 ../
+-rwxr-xr-x  1 root root  265 Nov 13 04:16 return.sh*
+ubuntu@ip-172-31-29-182:/script$ sudo mkdir test
+ubuntu@ip-172-31-29-182:/script$ cd ./test/
+ubuntu@ip-172-31-29-182:/script/test$ touch app.py
+touch: cannot touch 'app.py': Permission denied
+ubuntu@ip-172-31-29-182:/script/test$ sudo touch app.py
+ubuntu@ip-172-31-29-182:/script/test$ cd ../..
+ubuntu@ip-172-31-29-182:/$ test -d /script/test/
+ubuntu@ip-172-31-29-182:/$ echo $?
+0
+ubuntu@ip-172-31-29-182:/$ test -d /script/test1/
+ubuntu@ip-172-31-29-182:/$ echo $?
+1
+ubuntu@ip-172-31-29-182:/$ test -f /script/test/app.py
+ubuntu@ip-172-31-29-182:/$ echo $?
+0
+ubuntu@ip-172-31-29-182:/$ [ -d /script/test/ ]
+ubuntu@ip-172-31-29-182:/$ echo $?
+0
+ubuntu@ip-172-31-29-182:/$ [[ -d /script/test/ ]]
+ubuntu@ip-172-31-29-182:/$ echo $?
+0
+ubuntu@ip-172-31-29-182:/$ [[ -d /script/test1/ ]]
+ubuntu@ip-172-31-29-182:/$ echo $?
+1
+ubuntu@ip-172-31-29-182:/$ [[ -f /script/test/app.py ]]
+ubuntu@ip-172-31-29-182:/$ echo $?
+0
+ubuntu@ip-172-31-29-182:/$
