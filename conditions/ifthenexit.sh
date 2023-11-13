@@ -46,3 +46,20 @@ hi this is Jayaram
 this is first script in conditions
 + exit 0
 ubuntu@ip-172-31-29-182:/$
+ubuntu@ip-172-31-29-182:/$ bash -v ./ifthen.sh
+#!/bin/bash
+
+# check the file exit or does not using if condition
+
+FILE=/tmp/new1.txt
+
+if [[ -f ${FILE} ]]; then
+
+   cat ${FILE}
+
+   exit 0
+fi
+hi this is Jayaram
+
+this is first script in conditions
+ubuntu@ip-172-31-29-182:/$
