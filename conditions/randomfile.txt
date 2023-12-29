@@ -1,0 +1,1 @@
+hi good morning welcome to bash shell scripting
