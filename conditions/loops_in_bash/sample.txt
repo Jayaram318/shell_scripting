@@ -1,3 +1,9 @@
 hi good morning 
 welcome to linux world
 and enjoy the bash scripting
+
+
+Note:-
+
+   echo $(!!) this is used for previous command output displays
+   
